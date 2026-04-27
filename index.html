@@ -26,11 +26,11 @@ body{font-family:'Inter',sans-serif;}
 <p class="text-gray-400 text-xl">A-Level Chemistry • Eduqas Aligned</p>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
 <div class="card bg-[#111] border border-[#222] rounded-3xl p-10 cursor-pointer hover:border-purple-600" onclick="switchMode('organic-hub')">
 <div class="text-6xl mb-6 text-center">🌿</div>
 <h2 class="text-2xl font-bold mb-3 text-center">Organic Chemistry</h2>
-<p class="text-gray-400 text-center mb-6">Reactions, mechanisms, and structural representations</p>
+<p class="text-gray-400 text-center mb-6">Reactions, mechanisms, and structures</p>
 <div class="flex justify-center">
 <div class="px-8 py-3 bg-purple-600 rounded-xl font-semibold text-center mt-auto">Enter Hub</div>
 </div>
@@ -39,9 +39,18 @@ body{font-family:'Inter',sans-serif;}
 <div class="card bg-[#111] border border-[#222] rounded-3xl p-10 cursor-pointer hover:border-blue-500" onclick="switchMode('inorganic-hub')">
 <div class="text-6xl mb-6 text-center">💎</div>
 <h2 class="text-2xl font-bold mb-3 text-center">Inorganic Chemistry</h2>
-<p class="text-gray-400 text-center mb-6">Flame tests, complex colours, and precipitation</p>
+<p class="text-gray-400 text-center mb-6">Flame tests, complex colours, and precipitates</p>
 <div class="flex justify-center">
 <div class="px-8 py-3 bg-blue-600 rounded-xl font-semibold text-center mt-auto">Enter Hub</div>
+</div>
+</div>
+
+<div class="card bg-[#111] border border-[#222] rounded-3xl p-10 cursor-pointer hover:border-green-500" onclick="switchMode('daily-molecule')">
+<div class="text-6xl mb-6 text-center">🗓️</div>
+<h2 class="text-2xl font-bold mb-3 text-center">Daily Molecule</h2>
+<p class="text-gray-400 text-center mb-6">Hard A-Level application questions</p>
+<div class="flex justify-center">
+<div class="px-8 py-3 bg-green-600 rounded-xl font-semibold text-center mt-auto">Enter Challenge</div>
 </div>
 </div>
 </div>
@@ -49,6 +58,72 @@ body{font-family:'Inter',sans-serif;}
 <div class="text-center mt-16 text-gray-500 text-sm">
 <p>Complete A-Level exam preparation</p>
 <p class="mt-2">Organic Synthesis • Transition Metals • Observations</p>
+</div>
+</div>
+</div>
+
+<!-- DAILY MOLECULE -->
+<div id="daily-molecule" class="mode">
+<div class="max-w-4xl mx-auto p-8 min-h-screen flex flex-col py-12">
+<div class="mb-6">
+<button onclick="switchMode('home-page')" class="btn px-6 py-3 bg-[#1f1f1f] rounded-xl text-white">← Global Hub</button>
+</div>
+<div class="text-center mb-12">
+<h1 class="text-5xl font-bold mb-4 text-green-500">Daily Molecule</h1>
+<p class="text-gray-400 text-xl">Molecule of the Day: Paracetamol</p>
+</div>
+
+<div class="flex justify-center mb-10">
+<div class="bg-[#111] border border-[#222] p-8 rounded-3xl w-full max-w-md flex justify-center items-center">
+  <img src="./paracetamol.png" alt="Paracetamol structure" class="max-h-48 invert opacity-90">
+</div>
+</div>
+
+<div class="space-y-6">
+  <!-- Q1 -->
+  <div class="card bg-[#111] border border-[#222] rounded-3xl p-8">
+    <h3 class="text-2xl font-bold mb-4 text-green-400">Question 1</h3>
+    <p class="text-lg text-gray-200 mb-6">Write an equation for the base hydrolysis of paracetamol when heated under reflux with excess aqueous sodium hydroxide. State the structures of the salt and the amine formed.</p>
+    <button onclick="toggleAnswer('dm-ans-1')" class="px-6 py-2 bg-[#1f1f1f] rounded-lg font-semibold hover:bg-[#2a2a2a] transition-colors text-white">Reveal Answer</button>
+    <div id="dm-ans-1" class="hidden mt-6 p-6 bg-[#1a1a1a] border border-[#333] rounded-xl">
+      <p class="text-gray-300 mb-4"><strong>Products:</strong> Sodium 4-aminophenoxide and Sodium ethanoate.</p>
+      <p class="text-gray-400 text-sm mb-4">Because excess strong base is used, both the amide link is hydrolysed and the acidic phenol group is deprotonated.</p>
+      <div class="font-mono text-sm bg-black p-4 rounded-lg text-gray-300">
+        Paracetamol + 2NaOH → NaOC₆H₄NH₂ + CH₃COONa + H₂O
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="card bg-[#111] border border-[#222] rounded-3xl p-8">
+    <h3 class="text-2xl font-bold mb-4 text-green-400">Question 2</h3>
+    <p class="text-lg text-gray-200 mb-6">Outline a 3-step synthesis plan to form paracetamol starting from phenol. Include the reagents and essential conditions for each step.</p>
+    <button onclick="toggleAnswer('dm-ans-2')" class="px-6 py-2 bg-[#1f1f1f] rounded-lg font-semibold hover:bg-[#2a2a2a] transition-colors text-white">Reveal Answer</button>
+    <div id="dm-ans-2" class="hidden mt-6 p-6 bg-[#1a1a1a] border border-[#333] rounded-xl">
+      <ol class="list-decimal list-inside text-gray-300 space-y-4">
+        <li><strong>Nitration:</strong> React phenol with dilute HNO₃ at room temperature to form 4-nitrophenol (and 2-nitrophenol, which must be separated).</li>
+        <li><strong>Reduction:</strong> Heat 4-nitrophenol under reflux with Tin (Sn) and concentrated HCl, followed by adding NaOH(aq) to liberate the free amine. This forms 4-aminophenol.</li>
+        <li><strong>Acylation:</strong> React 4-aminophenol with ethanoyl chloride (or ethanoic anhydride) at room temperature to form paracetamol.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="card bg-[#111] border border-[#222] rounded-3xl p-8">
+    <h3 class="text-2xl font-bold mb-4 text-green-400">Question 3</h3>
+    <p class="text-lg text-gray-200 mb-2">Describe the appearance of the high-resolution ¹H NMR spectrum of paracetamol. State the relative peak areas and splitting patterns.</p>
+    <p class="text-sm text-gray-400 mb-6 italic">Note: Specific chemical shift values (positions of the peaks) are not required for this question.</p>
+    <button onclick="toggleAnswer('dm-ans-3')" class="px-6 py-2 bg-[#1f1f1f] rounded-lg font-semibold hover:bg-[#2a2a2a] transition-colors text-white">Reveal Answer</button>
+    <div id="dm-ans-3" class="hidden mt-6 p-6 bg-[#1a1a1a] border border-[#333] rounded-xl">
+      <p class="text-gray-300 mb-4">There are 4 distinct proton environments:</p>
+      <ul class="list-disc list-inside text-gray-300 space-y-3">
+        <li><strong>Singlet, integration 3</strong> (The R-C(=O)-CH₃ group).</li>
+        <li><strong>Two Doublets, integration 2 each</strong> (The 4 aromatic Ar-H protons).</li>
+        <li><strong>Singlet, integration 1</strong> (The phenol -OH proton).</li>
+        <li><strong>Singlet, integration 1</strong> (The amide -NH proton).</li>
+      </ul>
+    </div>
+  </div>
 </div>
 </div>
 </div>
@@ -777,6 +852,15 @@ document.addEventListener("keydown", e => {
 
 document.getElementById("it-category-select").addEventListener("change", () => { itLastQuestion = null; itNewQuestion(); });
 })();
+
+window.toggleAnswer = function(id) {
+  const el = document.getElementById(id);
+  if (el.classList.contains('hidden')) {
+    el.classList.remove('hidden');
+  } else {
+    el.classList.add('hidden');
+  }
+};
 
 function jsmeOnLoad() {
   window.sdJsmeApplet = new JSApplet.JSME("jsme_container", "700px", "500px");
